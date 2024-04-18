@@ -5,6 +5,8 @@ from string import ascii_uppercase
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
+from script_card import create_card
+
 
 #Criação do aplicativo Flask
 app = Flask(__name__)
@@ -102,6 +104,7 @@ def forms():
         session["celular"] = celular
         session["email"] = email
 
+        create_card(303852745, 325423909, nome, cpf, celular, email)
 
         return redirect(url_for("room"))
 
